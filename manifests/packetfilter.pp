@@ -28,7 +28,7 @@ class ldap::packetfilter
         chain    => 'INPUT',
         proto    => 'tcp',
         source   => $source_v4,
-        port     => $allow_ports,
+        dport    => $allow_ports,
         action   => 'accept'
     }
 
@@ -37,7 +37,7 @@ class ldap::packetfilter
         provider => 'ip6tables',
         chain    => 'INPUT',
         proto    => 'tcp',
-        port     => $allow_ports,
+        dport    => $allow_ports,
         source   => $source_v6,
         action   => 'accept',
     }
