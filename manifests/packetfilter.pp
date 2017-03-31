@@ -23,22 +23,24 @@ class ldap::packetfilter
     }
 
     # IPv4 rules
-    firewall { '013 ipv4 accept ldap port':
+    @firewall { '013 ipv4 accept ldap port':
         provider => 'iptables',
         chain    => 'INPUT',
         proto    => 'tcp',
         source   => $source_v4,
         dport    => $allow_ports,
-        action   => 'accept'
+        action   => 'accept',
+        tag      => 'default',
     }
 
     # IPv6 rules
-    firewall { '013 ipv6 accept ldap port':
+    @firewall { '013 ipv6 accept ldap port':
         provider => 'ip6tables',
         chain    => 'INPUT',
         proto    => 'tcp',
         dport    => $allow_ports,
         source   => $source_v6,
         action   => 'accept',
+        tag      => 'default',
     }
 }

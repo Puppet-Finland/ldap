@@ -1,6 +1,6 @@
 {
   "name": "puppetfinland-ldap",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Puppet-Finland team",
   "license": "BSD license",
   "summary": "Generic LDAP configurations",
